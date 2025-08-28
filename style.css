@@ -71,6 +71,7 @@
     /* Logo e Ícones */
     --logo-size: 3rem;
     --logo-color: var(--text-white);
+    --logo-max-width: 240px;
 }
 
 /* Tema Escuro (para implementação futura) */
@@ -134,6 +135,16 @@ body {
     font-size: var(--logo-size);
     margin-bottom: var(--spacing-xs);
     color: var(--logo-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo img {
+    max-width: var(--logo-max-width);
+    height: auto;
+    width: 100%;
+    object-fit: contain;
 }
 
 .logo h1 {
