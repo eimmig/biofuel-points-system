@@ -1,0 +1,157 @@
+/* ========================================
+   GUIA DE PERSONALIZAÇÃO DO TEMA
+   KUMBISTIVEL DO SACI
+   ======================================== */
+
+/*
+  Este arquivo contém exemplos de como personalizar o tema do app.
+  Para alterar as cores e visual, edite as variáveis CSS no início do arquivo style.css.
+*/
+
+/* ========================================
+   EXEMPLO 1: TEMA AZUL CORPORATIVO
+   ======================================== */
+/*
+:root {
+    --primary-color: #3498db;
+    --primary-light: #5dade2;
+    --primary-dark: #2980b9;
+    --primary-gradient: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    
+    --secondary-color: #e74c3c;
+    --secondary-light: #ec7063;
+    --secondary-dark: #c0392b;
+    --secondary-gradient: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%);
+    
+    --bg-primary: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+*/
+
+/* ========================================
+   EXEMPLO 2: TEMA LARANJA ENERGÉTICO
+   ======================================== */
+/*
+:root {
+    --primary-color: #ff6b35;
+    --primary-light: #ff8c69;
+    --primary-dark: #e55722;
+    --primary-gradient: linear-gradient(135deg, #ff6b35 0%, #ff8c69 100%);
+    
+    --secondary-color: #ffd23f;
+    --secondary-light: #ffe066;
+    --secondary-dark: #e6be39;
+    --secondary-gradient: linear-gradient(135deg, #ffd23f 0%, #ffe066 100%);
+    
+    --bg-primary: linear-gradient(135deg, #ff6b35 0%, #ff8c69 100%);
+}
+*/
+
+/* ========================================
+   EXEMPLO 3: TEMA ROXO PREMIUM
+   ======================================== */
+/*
+:root {
+    --primary-color: #8e44ad;
+    --primary-light: #a569bd;
+    --primary-dark: #7d3c98;
+    --primary-gradient: linear-gradient(135deg, #8e44ad 0%, #a569bd 100%);
+    
+    --secondary-color: #f39c12;
+    --secondary-light: #f4d03f;
+    --secondary-dark: #d68910;
+    --secondary-gradient: linear-gradient(135deg, #f39c12 0%, #f4d03f 100%);
+    
+    --bg-primary: linear-gradient(135deg, #8e44ad 0%, #663399 100%);
+}
+*/
+
+/* ========================================
+   PERSONALIZAÇÃO DO LOGO
+   ======================================== */
+
+/* Para alterar o logo, modifique o conteúdo do .company-logo no HTML */
+/* Opções de ícones para biocombustível:
+   🌿 - Folha (atual)
+   🌱 - Broto
+   ♻️ - Reciclagem
+   🍃 - Folhas
+   🌾 - Grãos
+   ⚡ - Energia
+   🔋 - Bateria
+   💚 - Coração verde
+*/
+
+/* Para usar uma imagem como logo: */
+/*
+.company-logo {
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url('logo-kumbistivel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto var(--spacing-xs);
+}
+*/
+
+/* ========================================
+   PERSONALIZAÇÃO AVANÇADA
+   ======================================== */
+
+/* Para alterar a fonte: */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --font-family: 'Roboto', sans-serif;
+}
+*/
+
+/* Para adicionar gradientes personalizados: */
+/*
+:root {
+    --custom-gradient-1: linear-gradient(45deg, #ff9a56, #ffad56);
+    --custom-gradient-2: linear-gradient(135deg, #667eea, #764ba2);
+    --custom-gradient-3: linear-gradient(90deg, #ffecd2, #fcb69f);
+}
+*/
+
+/* Para modo escuro personalizado: */
+/*
+[data-theme="dark"] {
+    --bg-surface: #1a1a1a;
+    --bg-card: #2d2d2d;
+    --bg-input: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --shadow-xl: 0 0 20px rgba(255,255,255,0.1);
+}
+*/
+
+/* ========================================
+   INSTRUÇÕES DE USO
+   ======================================== */
+
+/*
+1. Para alterar as cores do app:
+   - Copie as variáveis do exemplo desejado
+   - Cole no início do arquivo style.css (dentro de :root)
+   - Salve o arquivo
+
+2. Para usar logo personalizado:
+   - Coloque a imagem do logo na mesma pasta do app
+   - Descomente e edite o CSS da seção "PERSONALIZAÇÃO DO LOGO"
+   - Ajuste o caminho da imagem conforme necessário
+
+3. Para criar um tema totalmente customizado:
+   - Altere as variáveis CSS conforme sua identidade visual
+   - Teste em diferentes dispositivos
+   - Verifique o contraste das cores para acessibilidade
+
+4. Para implementar modo escuro:
+   - Adicione um botão de toggle no HTML
+   - Use JavaScript para alternar a classe/atributo data-theme
+   - Defina as cores escuras nas variáveis CSS
+*/
