@@ -1,147 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumbistivel do Saci - App de Pontos</title>
-    <link rel="icon" type="image/png" href="logo-pequena-convertido-de-png.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Kumbustível do Saci - Acelere para um amanhã sustentável!</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <div class="company-logo"><img src="logo-com-escrita.png" alt="Kumbistivel do Saci Logo"></div>
-                <h2>Acelere para um amanhã sustentável!</h2>
-            </div>
-        </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Points Summary Card -->
-            <section class="points-summary">
-                <h2>Resumo de Pontos</h2>
-                <div class="points-card">
-                    <div class="points-info-row">
-                        <div class="points-detail">
-                            <span class="points-detail-label">Total de Pontos</span>
-                            <span class="points-detail-value" id="totalPointsDetail">0</span>
-                        </div>
-                        <div class="points-detail">
-                            <span class="points-detail-label">Valor em Desconto</span>
-                            <span class="points-detail-value discount-value" id="totalDiscountValue">R$ 0,00</span>
-                        </div>
-                    </div>
-                    <div class="points-progress">
-                        <span class="progress-label">Próximo desconto de R$ 1,00 em:</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill"></div>
-                        </div>
-                        <span class="progress-text" id="progressText">0 / 100 pontos</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Fuel Station Form -->
-            <section class="fuel-form">
-                <h2>Registrar Abastecimento</h2>
-                <form id="fuelForm">
-                    <div class="form-group">
-                        <label for="stationCode">Código da Bomba</label>
-                        <input type="text" id="stationCode" placeholder="Ex: K001, B123..." required>
-                    </div>
-                    
-                    <!-- Loading Animation Container -->
-                    <div id="fuelLoadingContainer" class="fuel-loading-container" style="display: none;">
-                        <div class="fuel-loading">
-                            <div class="fuel-pump">
-                                <div class="pump-nozzle">⛽</div>
-                                <div class="fuel-drops">
-                                    <div class="drop">🌿</div>
-                                    <div class="drop">🌿</div>
-                                    <div class="drop">🌿</div>
-                                </div>
-                            </div>
-                            <div class="loading-text">
-                                <span>Abastecendo biocombustível...</span>
-                                <div class="loading-dots">
-                                    <span>.</span>
-                                    <span>.</span>
-                                    <span>.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Result Display -->
-                    <div id="fuelResult" class="fuel-result" style="display: none;">
-                        <div class="result-icon">🌿</div>
-                        <div class="result-text">
-                            <span>Abastecimento realizado!</span>
-                            <div class="liters-display" id="litersDisplay">0,00 L</div>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary" id="fuelButton">Iniciar Abastecimento</button>
-                </form>
-            </section>
-
-            <!-- Points Conversion -->
-            <section class="points-section">
-                <h2>Usar Pontos</h2>
-                <div class="points-info">
-                    <div class="conversion-rate">
-                        <span>💰 1 ponto = R$ 0,01 em desconto</span>
-                    </div>
-                    <div class="available-discount">
-                        <span>Desconto disponível: R$ <span id="availableDiscount">0,00</span></span>
-                    </div>
-                </div>
-                
-                <div class="discount-form">
-                    <div class="form-group">
-                        <label for="pointsToUse">Pontos a usar</label>
-                        <input type="number" id="pointsToUse" placeholder="0" min="0" max="0">
-                    </div>
-                    <button type="button" id="usePointsBtn" class="btn-secondary">Usar Pontos</button>
-                </div>
-            </section>
-
-            <!-- Transaction History -->
-            <section class="history-section">
-                <h2>Histórico</h2>
-                <div id="transactionHistory" class="history-list">
-                    <p class="no-transactions">Nenhuma transação ainda</p>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 Kumbistivel do Saci - Biocombustível sustentável para um futuro verde</p>
-        </footer>
-    </div>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body">
-                <div class="success-icon">✅</div>
-                <h3 id="modalTitle">Pontos Adicionados!</h3>
-                <p id="modalMessage">Você ganhou 50 pontos!</p>
-            </div>
+    <header>
+        <div class="container">
+            <a href="index.html">
+                <img src="logo-pequena-convertido-de-png.svg" alt="Logo Kumbustível do Saci" class="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#benefits">Vantagens</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="pontos.html" class="button-header">Usar Pontos</a>
         </div>
-    </div>
+    </header>
 
-    <!-- Toast Container -->
-    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
-    </div>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Acelere para um amanhã sustentável!</h1>
+                <p>O biocombustível que move o futuro do planeta e a economia do seu bolso.</p>
+                <a href="#contact" class="button-primary">Seja um Parceiro</a>
+            </div>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+        <section id="benefits">
+            <div class="container">
+                <h2>Por que escolher a Kumbustível do Saci?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <img src="https://marketplace.canva.com/ARZ8E/MAFmAUARZ8E/1/tl/canva-natural-leaf-icon.-100%25-naturals-vector-image-MAFmAUARZ8E.png" alt="Ícone de Folha" class="icon">
+                        <h3>100% Sustentável</h3>
+                        <p>Nosso combustível é produzido a partir de fontes renováveis, reduzindo a emissão de gases e cuidando do nosso meio ambiente.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2061/2061956.png" alt="Ícone de Motor" class="icon">
+                        <h3>Mais Desempenho</h3>
+                        <p>Tecnologia de ponta que garante a máxima performance para o seu motor, com mais rendimento por litro.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331903.png" alt="Ícone de Moeda" class="icon">
+                        <h3>Economia Real</h3>
+                        <p>Além de ajudar o planeta, você economiza. Participe do nosso programa de pontos e abasteça com descontos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <p>Tem interesse em ser um revendedor ou quer saber mais sobre nossos produtos? Envie uma mensagem!</p>
+                <form>
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    <button type="submit" class="button-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kumbustível do Saci. Todos os direitos reservados.</p>
+            <p>Pato Branco, Paraná, Brasil</p>
+        </div>
+    </footer>
+
 </body>
 </html>
