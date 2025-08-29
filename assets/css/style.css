@@ -1,0 +1,556 @@
+/* ---- IMPORTAÇÃO DAS VARIÁVEIS ---- */
+@import url('variables.css');
+
+/* ---- CONFIGURAÇÕES GERAIS ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Garantir que main não tenha espaços extras */
+main {
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- CABEÇALHO ---- */
+header {
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-md);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    transition: color var(--transition-normal);
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Menu hambúrguer (inicialmente oculto) */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    margin: 3px 0;
+    transition: var(--transition-normal);
+    border-radius: 2px;
+}
+
+/* Animação do menu hambúrguer quando ativo */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.button-header {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-normal);
+}
+
+.button-header:hover {
+    background: var(--primary-color);
+    color: var(--text-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ---- SEÇÃO HERO ---- */
+#hero {
+    background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('https://images.unsplash.com/photo-1569163895402-be13696b2b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-white);
+    padding: 0 20px;
+    position: relative;
+    /* Fallback para dispositivos com viewport dinâmico */
+    min-height: 600px;
+    max-height: 100vh;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.button-primary {
+    background: var(--primary-gradient);
+    color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ---- SEÇÃO DE VANTAGENS ---- */
+#benefits {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+#benefits h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: var(--text-primary);
+    font-weight: var(--font-weight-bold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Garantir contraste no modo escuro */
+@media (prefers-color-scheme: dark) {
+    #benefits h2 {
+        color: var(--text-white);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-card {
+    background: var(--bg-surface);
+    padding: 40px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.benefit-card .icon {
+    height: 60px;
+    margin-bottom: 20px;
+    filter: hue-rotate(90deg);
+}
+
+/* Ícone específico para sustentabilidade - manter cor original */
+.benefit-card .icon.sustentavel {
+    filter: none;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+}
+
+.benefit-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ---- SEÇÃO DE CONTATO ---- */
+#contact {
+    padding: 80px 0 80px 0;
+    text-align: center;
+    background: var(--bg-surface);
+    margin-bottom: 0; /* Garantir que não há espaço antes do footer */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-weight: var(--font-weight-bold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Garantir contraste no modo escuro para seção de contato */
+@media (prefers-color-scheme: dark) {
+    #contact h2 {
+        color: var(--text-white);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    #contact p {
+        color: var(--text-secondary);
+    }
+}
+
+#contact p {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--points-bg);
+}
+
+/* ---- RODAPÉ ---- */
+footer {
+    background: var(--primary-color);
+    color: var(--text-white);
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer .container {
+    padding: 0 20px;
+    margin: 0;
+}
+
+/* ---- MEDIA QUERIES PARA RESPONSIVIDADE ---- */
+
+/* Tablets e telas menores (768px e abaixo) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header responsivo com menu hambúrguer */
+    header .container {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    .nav-menu {
+        display: none;
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        background: var(--bg-surface);
+        padding: 20px 0;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-menu ul li {
+        margin-left: 0;
+    }
+
+    .button-header {
+        order: 1;
+        margin-left: auto;
+    }
+
+    .logo {
+        height: 40px;
+        order: 0;
+    }
+
+    /* Hero responsivo */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    /* Grid de benefícios responsivo */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefit-card {
+        padding: 30px 20px;
+    }
+
+    /* Seções com menos padding */
+    #benefits,
+    #contact {
+        padding: 60px 0;
+    }
+
+    #benefits h2,
+    #contact h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (576px e abaixo) */
+@media (max-width: 576px) {
+    /* Header ainda mais compacto */
+    header {
+        padding: 10px 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .button-header {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Hero responsivo - usar vh dinâmica */
+    #hero {
+        padding: 0 15px;
+        height: calc(var(--vh, 1vh) * 70); /* Usar viewport dinâmico */
+        min-height: 500px;
+        max-height: 70vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .button-primary {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Benefit cards mais compactos */
+    .benefit-card {
+        padding: 25px 15px;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .benefit-card .icon {
+        height: 50px;
+    }
+
+    /* Formulário responsivo */
+    #contact form input,
+    #contact form textarea {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Seções com padding ajustado */
+    #benefits,
+    #contact {
+        padding: 40px 0;
+    }
+
+    #benefits h2,
+    #contact h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* Footer com padding adequado - sem espaços extras */
+    footer {
+        padding: 30px 0;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+
+/* Telas muito pequenas (480px e abaixo) */
+@media (max-width: 480px) {
+    /* Configurações específicas para dispositivos muito pequenos */
+    html {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    body {
+        min-height: 100vh;
+        height: auto;
+        /* Removido padding-bottom que criava espaço branco */
+    }
+    
+    /* Hero ainda menor para dar espaço ao conteúdo */
+    #hero {
+        height: calc(var(--vh, 1vh) * 60); /* Usar viewport dinâmico */
+        min-height: 400px;
+        max-height: 60vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .button-primary,
+    .button-header {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    #benefits h2,
+    #contact h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Seções mais compactas */
+    #benefits,
+    #contact {
+        padding: 30px 0;
+    }
+    
+    /* Footer com espaço garantido - sem espaço superior */
+    footer {
+        padding: 25px 0 45px 0; /* Padding inferior maior para garantir scroll sem espaço branco extra */
+        margin-top: 0; /* Removido espaço superior */
+        position: relative;
+    }
+    
+    /* Garantir que o formulário seja totalmente visível */
+    #contact form {
+        margin-bottom: 30px;
+    }
+    
+    #contact form .button-primary {
+        margin-bottom: 20px;
+    }
+}

@@ -2,9 +2,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#27ae60">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Kumbustível do Saci - Acelere para um amanhã sustentável!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,9 +17,17 @@
     <header>
         <div class="container">
             <a href="index.html">
-                <img src="logo-pequena-convertido-de-png.svg" alt="Logo Kumbustível do Saci" class="logo">
+                <img src="assets/images/logo-pequena-convertido-de-png.svg" alt="Logo Kumbustível do Saci" class="logo">
             </a>
-            <nav>
+            
+            <!-- Menu hambúrguer para mobile -->
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="#hero">Início</a></li>
                     <li><a href="#benefits">Vantagens</a></li>
@@ -41,7 +52,7 @@
                 <h2>Por que escolher a Kumbustível do Saci?</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card">
-                        <img src="https://marketplace.canva.com/ARZ8E/MAFmAUARZ8E/1/tl/canva-natural-leaf-icon.-100%25-naturals-vector-image-MAFmAUARZ8E.png" alt="Ícone de Folha" class="icon">
+                        <img src="https://marketplace.canva.com/ARZ8E/MAFmAUARZ8E/1/tl/canva-natural-leaf-icon.-100%25-naturals-vector-image-MAFmAUARZ8E.png" alt="Ícone de Folha" class="icon sustentavel">
                         <h3>100% Sustentável</h3>
                         <p>Nosso combustível é produzido a partir de fontes renováveis, reduzindo a emissão de gases e cuidando do nosso meio ambiente.</p>
                     </div>
@@ -79,6 +90,49 @@
             <p>Pato Branco, Paraná, Brasil</p>
         </div>
     </footer>
+
+    <script>
+        // Funcionalidade do menu hambúrguer
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Fechar menu ao redimensionar a tela para desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Corrigir altura do viewport em dispositivos móveis
+        function setVhProperty() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        // Definir altura inicial
+        setVhProperty();
+
+        // Atualizar altura quando o viewport mudar (barra de endereços do mobile)
+        window.addEventListener('resize', setVhProperty);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(setVhProperty, 100);
+        });
+    </script>
 
 </body>
 </html>

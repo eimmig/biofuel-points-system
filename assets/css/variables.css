@@ -1,0 +1,90 @@
+/* ========================================
+   VARIÁVEIS DO TEMA - KUMBUSTIVEL DO SACI
+   ======================================== */
+:root {
+    /* Cores Primárias */
+    --primary-color: #27ae60;
+    --primary-light: #2ecc71;
+    --primary-dark: #229954;
+    --primary-gradient: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    
+    /* Cores Secundárias */
+    --secondary-color: #f39c12;
+    --secondary-light: #f1c40f;
+    --secondary-dark: #e67e22;
+    --secondary-gradient: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+    
+    /* Cores de Fundo */
+    --bg-primary: linear-gradient(135deg, #27ae60 0%, #16a085 100%);
+    --bg-secondary: #ecf87f;
+    --bg-surface: #ffffff;
+    --bg-card: #f8fffe;
+    --bg-input: #f1f8f4;
+    --bg-light: #f8f9fa;
+    
+    /* Cores de Texto */
+    --text-primary: #2c3e50;
+    --text-secondary: #34495e;
+    --text-muted: #7f8c8d;
+    --text-light: #95a5a6;
+    --text-white: #ffffff;
+    --text-dark: #2c3e50;
+    
+    /* Cores de Estado */
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    
+    /* Cores de Pontos */
+    --points-positive: #27ae60;
+    --points-negative: #e74c3c;
+    --points-bg: rgba(39, 174, 96, 0.1);
+    
+    /* Configurações de Tipografia */
+    --font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Tamanhos */
+    --border-radius: 12px;
+    --border-radius-large: 20px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 2.5rem;
+    --spacing-xxl: 3rem;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 25px rgba(39, 174, 96, 0.3);
+    --shadow-xl: 0 0 20px rgba(0,0,0,0.1);
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.4s ease;
+    
+    /* Hero Background */
+    --hero-overlay: rgba(44, 62, 80, 0.7);
+}
+
+/* Tema Escuro (para implementação futura) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-surface: #2c3e50;
+        --bg-card: #34495e;
+        --bg-input: #3a4a5c;
+        --bg-light: #34495e;
+        --text-primary: #ecf0f1;
+        --text-secondary: #bdc3c7;
+        --text-muted: #95a5a6;
+        --shadow-md: 0 4px 8px rgba(0,0,0,0.3);
+        --shadow-lg: 0 8px 25px rgba(39, 174, 96, 0.4);
+    }
+}
