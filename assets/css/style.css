@@ -323,12 +323,17 @@ footer {
 }
 
 footer p {
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
 }
 
 footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 0 20px;
-    margin: 0;
 }
 
 /* ---- MEDIA QUERIES PARA RESPONSIVIDADE ---- */
@@ -487,12 +492,17 @@ footer .container {
         margin-bottom: 30px;
     }
 
-    /* Footer com padding adequado - sem espaços extras */
+    /* Footer com padding adequado - corrigindo centralização */
     footer {
-        padding: 30px 0;
+        padding: 30px 20px;
         font-size: 0.9rem;
-        margin-bottom: 0;
-        margin-top: 0;
+        margin: 0;
+        text-align: center;
+    }
+    
+    footer .container {
+        max-width: none;
+        padding: 0;
     }
 }
 
@@ -538,11 +548,19 @@ footer .container {
         padding: 30px 0;
     }
     
-    /* Footer com espaço garantido - sem espaço superior */
+    /* Footer com espaço garantido - corrigindo problemas mobile */
     footer {
-        padding: 25px 0 45px 0; /* Padding inferior maior para garantir scroll sem espaço branco extra */
-        margin-top: 0; /* Removido espaço superior */
+        padding: 25px 15px 35px 15px; /* Padding lateral para evitar corte */
+        margin: 0;
         position: relative;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    footer .container {
+        max-width: none;
+        padding: 0;
+        margin: 0;
     }
     
     /* Garantir que o formulário seja totalmente visível */
