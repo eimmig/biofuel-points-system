@@ -389,14 +389,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.value = e.target.value.toUpperCase();
     });
 
-    // Prevent negative values in liters input
-    const litersInput = document.getElementById('liters');
-    litersInput.addEventListener('input', (e) => {
-        if (parseFloat(e.target.value) < 0) {
-            e.target.value = '0';
-        }
-    });
-
     // Prevent negative values in points input
     const pointsInput = document.getElementById('pointsToUse');
     pointsInput.addEventListener('input', (e) => {
