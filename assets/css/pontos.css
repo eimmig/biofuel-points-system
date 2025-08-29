@@ -74,15 +74,26 @@
     --logo-max-width: 240px;
 }
 
-/* Tema Escuro (para implementação futura) */
+/* Tema Escuro - Paleta Moderna e Elegante */
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-surface: #2c3e50;
-        --bg-card: #34495e;
-        --bg-input: #3a4a5c;
-        --text-primary: #ecf0f1;
-        --text-secondary: #bdc3c7;
-        --text-muted: #95a5a6;
+        /* Backgrounds modernos com tons neutros */
+        --bg-surface: #1a1a1a;          /* Preto suave, moderno */
+        --bg-card: #262626;             /* Cinza escuro elegante */
+        --bg-input: #2d2d2d;            /* Cinza médio para inputs */
+        
+        /* Textos com melhor contraste */
+        --text-primary: #f5f5f5;        /* Branco suave, menos harsh */
+        --text-secondary: #d4d4d4;      /* Cinza claro para textos secundários */
+        --text-muted: #a3a3a3;          /* Cinza médio para textos menos importantes */
+        
+        /* Sombras mais sutis e modernas */
+        --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+        --shadow-lg: 0 8px 30px rgba(39, 174, 96, 0.25);
+        --shadow-xl: 0 12px 40px rgba(0,0,0,0.3);
+        
+        /* Pontos com fundo mais sutil */
+        --points-bg: rgba(39, 174, 96, 0.15);
     }
 }
 
